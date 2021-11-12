@@ -9,11 +9,24 @@ public class User {
     private  String lastName;
     private boolean gender;
     private String email;
-    DateFormat dateFormat=new SimpleDateFormat("yyyy/MM/dd");
-    Date Date= new Date();
+    private Date date;
     private String password;
     private String listOfCredits;
     private  String listOfCards;
+    
+    /*
+        Scanner sc =....
+        User u = new User();
+        u.setName(sc.next())
+        u.setLastName(sc.next())
+        
+        String dateString = sc.next();
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+        
+        u.setDate(df.parse(dateString))
+        System.out.println(u.getDate());
+    */
+    
 //    User (String name,String lastName,Boolean gender,String email,Date date,String password,String listOfCredits,String listOfCards){
 //        this.name=name;
 //        this.lastName=lastName;
