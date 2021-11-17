@@ -3,23 +3,20 @@ package com.company;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
+import java.util.LinkedList;
+import java.text.ParseException;
 
-public class User {
-    private  String name;
-    private  String lastName;
+public class User  {
+    private String name;
+    private String lastName;
     private boolean gender;
     private String email;
-    DateFormat dateFormat=new SimpleDateFormat("yyyy/MM/dd");
-    Date Date= new Date();
+    private Date date;
     private String password;
-    private String listOfCredits;
-    private  String listOfCards;
-//    User (String name,String lastName,Boolean gender,String email,Date date,String password,String listOfCredits,String listOfCards){
-//        this.name=name;
-//        this.lastName=lastName;
-//        this.gender=gender;
-//
-//    }
+    LinkedList<User> listOfCredits = new LinkedList<User>();
+    LinkedList<User> listOfCards = new LinkedList<User>();
+
 
     public String getName() {
         return name;
@@ -53,20 +50,12 @@ public class User {
         this.email = email;
     }
 
-    public DateFormat getDateFormat() {
-        return dateFormat;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDateFormat(DateFormat dateFormat) {
-        this.dateFormat = dateFormat;
-    }
-
-    public java.util.Date getDate() {
-        return Date;
-    }
-
-    public void setDate(java.util.Date date) {
-        Date = date;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getPassword() {
@@ -77,22 +66,51 @@ public class User {
         this.password = password;
     }
 
-    public String getListOfCredits() {
+    public LinkedList<User> getListOfCredits() {
         return listOfCredits;
     }
 
-    public void setListOfCredits(String listOfCredits) {
+    public void setListOfCredits(LinkedList<User> listOfCredits) {
         this.listOfCredits = listOfCredits;
     }
 
-    public String getListOfCards() {
+    public LinkedList<User> getListOfCards() {
         return listOfCards;
     }
 
-    public void setListOfCards(String listOfCards) {
+    public void setListOfCards(LinkedList<User> listOfCards) {
         this.listOfCards = listOfCards;
+
+        Scanner sc = new Scanner(System.in);
+        User u = new User();
+        u.setName(sc.next());
+        u.setLastName(sc.next());
+        String dateString = sc.next();
+        try {
+            DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+        u.setDate(df.parse(dateString));
+        System.out.println(u.getDate());
+
+    } catch (ParseException ex) {
+        }
+
+}
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gender=" + gender +
+                ", email='" + email + '\'' +
+                ", date=" + date +
+                ", password='" + password + '\'' +
+                ", listOfCredits=" + listOfCredits +
+                ", listOfCards=" + listOfCards +
+                '}';
     }
 }
+
 
 
 
