@@ -4,7 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.text.ParseException;
 
 public class User  {
@@ -14,8 +14,8 @@ public class User  {
     private String email;
     private Date date;
     private String password;
-    LinkedList<User> listOfCredits = new LinkedList<User>();
-    LinkedList<User> listOfCards = new LinkedList<User>();
+    ArrayList<User> listOfCredits = new ArrayList<>();
+   ArrayList<User> listOfCards = new ArrayList<>();
 
 
     public String getName() {
@@ -66,19 +66,19 @@ public class User  {
         this.password = password;
     }
 
-    public LinkedList<User> getListOfCredits() {
+    public ArrayList<User> getListOfCredits() {
         return listOfCredits;
     }
 
-    public void setListOfCredits(LinkedList<User> listOfCredits) {
+    public void setListOfCredits(ArrayList<User> listOfCredits) {
         this.listOfCredits = listOfCredits;
     }
 
-    public LinkedList<User> getListOfCards() {
+    public ArrayList<User> getListOfCards() {
         return listOfCards;
     }
 
-    public void setListOfCards(LinkedList<User> listOfCards) {
+    public void setListOfCards(ArrayList<User> listOfCards) {
         this.listOfCards = listOfCards;
 
         Scanner sc = new Scanner(System.in);
