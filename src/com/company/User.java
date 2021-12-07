@@ -14,8 +14,11 @@ public class User  {
     private String email;
     private Date date;
     private String password;
-    ArrayList<User> listOfCredits = new ArrayList<>();
-   ArrayList<User> listOfCards = new ArrayList<>();
+    ArrayList<Loan> listOfCredits = new ArrayList<>();
+   ArrayList<DebitCard> listOfCards = new ArrayList<>();
+
+
+
 
 
     public String getName() {
@@ -66,35 +69,21 @@ public class User  {
         this.password = password;
     }
 
-    public ArrayList<User> getListOfCredits() {
+    public ArrayList<Loan> getListOfCredits() {
         return listOfCredits;
     }
 
-    public void setListOfCredits(ArrayList<User> listOfCredits) {
+    public void setListOfCredits(ArrayList<Loan> listOfCredits) {
         this.listOfCredits = listOfCredits;
     }
 
-    public ArrayList<User> getListOfCards() {
+    public ArrayList<DebitCard> getListOfCards() {
         return listOfCards;
     }
 
-    public void setListOfCards(ArrayList<User> listOfCards) {
+    public void setListOfCards(ArrayList<DebitCard> listOfCards) {
         this.listOfCards = listOfCards;
-
-        Scanner sc = new Scanner(System.in);
-        User u = new User();
-        u.setName(sc.next());
-        u.setLastName(sc.next());
-        String dateString = sc.next();
-        try {
-            DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-        u.setDate(df.parse(dateString));
-        System.out.println(u.getDate());
-
-    } catch (ParseException ex) {
-        }
-
-}
+    }
 
     @Override
     public String toString() {
