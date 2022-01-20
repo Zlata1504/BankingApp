@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args)throws ParseException  {
 	// write your code here
-        Bank object=new Bank();
-        object.start();
+        Bank bank=new Bank();
+        bank.start();
     }
 }

@@ -1,11 +1,12 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Loan {
+public class Loan implements Serializable {
         private Date dateOfIssue;
         private double sum;
-        private double percent;
+        private double percent=7.2;
         private int creditTerm;
         private double monthlyPayment;
 

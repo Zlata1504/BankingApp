@@ -1,27 +1,20 @@
 package com.company;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.io.Serializable;
 import java.util.Date;
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.text.ParseException;
 
-public class User  {
+public class User implements Serializable {
     private String name;
     private String lastName;
-    private boolean gender;
+    private String gender;
     private String email;
     private Date date;
     private String password;
-    ArrayList<Loan> listOfCredits = new ArrayList<>();
-   ArrayList<DebitCard> listOfCards = new ArrayList<>();
+    private ArrayList<Loan> listOfCredits = new ArrayList<>();
+   private ArrayList<DebitCard> listOfCards = new ArrayList<>();
 
-
-
-
-
-    public String getName() {
+   public String getName() {
         return name;
     }
 
@@ -37,11 +30,11 @@ public class User  {
         this.lastName = lastName;
     }
 
-    public boolean isGender() {
+    public String isGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
